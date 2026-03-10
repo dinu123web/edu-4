@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>King's International School</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <style>
+    body {
+      background: #e6f0fa;
+      color: #0b3d91;
+    }
+    nav {
+      background-color: #0b3d91;
+      color: #ffffff;
+      padding: 0.5em 1em;
+    }
+    nav a {
+      color: #ffffff;
+    }
+    header, section, footer {
+      padding: 2em 0;
+    }
+    h2, h3 {
+      color: #0b3d91;
+    }
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .admin-table th, .admin-table td {
+      border: 1px solid #0b3d91;
+      padding: 0.5em;
+      text-align: left;
+    }
+    .admin-table th {
+      background-color: #cce0ff;
+    }
+    .btn-primary {
+      background-color: #0b3d91;
+      color: #ffffff;
+    }
+    .hero-img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="container-fluid">
+  <ul>
+    <li><strong>King's International School</strong></li>
+  </ul>
+  <ul>
+    <li><a href="#register">Register</a></li>
+    <li><a href="#admin">Admin</a></li>
+    <li><a href="#subscribe" role="button">Subscribe</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+  <div class="grid">
+    <section>
+      <hgroup>
+        <h2>Welcome to King's International School</h2>
+        <h3>Quality Education for a Brighter Future</h3>
+      </hgroup>
+      <p>King's International School provides a safe and nurturing environment where students can excel academically and personally. Join us today and become part of our learning family.</p>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1596496054974-40b50215f3a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8c2Nob29sfHx8fHx8MTY5NzIzNTY0OA&ixlib=rb-4.0.3&q=80&w=1080" alt="School building" class="hero-img"/>
+        <figcaption><a href="https://unsplash.com/photos/40b50215f3a4" target="_blank">Photo by Unsplash</a></figcaption>
+      </figure>
+      <h3>Register a New Student</h3>
+      <p>Please fill out the form below to register a student.</p>
+
+      <form id="register" class="grid" style="gap:1em;">
+        <input type="text" name="full_name" placeholder="Full Name" aria-label="Full Name" required />
+        <input type="text" name="guardian_name" placeholder="Guardian's Name" aria-label="Guardian's Name" required />
+        <input type="date" name="dob" placeholder="Date of Birth" aria-label="Date of Birth" required />
+        <input type="number" name="age" placeholder="Age" aria-label="Age" required />
+        <input type="text" name="gender" placeholder="Gender" aria-label="Gender" required />
+        <input type="tel" name="phone" placeholder="Telephone Number" aria-label="Telephone Number" required />
+        <input type="number" name="admission_no" placeholder="Admission Number" aria-label="Admission Number" required />
+        <button type="submit" class="btn-primary" onclick="event.preventDefault(); registerStudent();">Register Student</button>
+      </form>
+
+      <h3>Administration View</h3>
+      <p>All registered students will appear below:</p>
+      <table class="admin-table" id="admin">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Guardian's Name</th>
+            <th>Date of Birth</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Telephone</th>
+            <th>Admission No</th>
+          </tr>
+        </thead>
+        <tbody id="studentList">
+          <!-- Registered students will appear here -->
+        </tbody>
+      </table>
+    </section>
+  </div>
+</main>
+
+<section aria-label="Subscribe example">
+  <div class="container">
+    <article>
+      <hgroup>
+        <h2>Subscribe for Updates</h2>
+        <h3>Get the latest news from King's International School</h3>
+      </hgroup>
+      <form class="grid">
+        <input type="text" id="firstname" name="firstname" placeholder="First Name" aria-label="First Name" required />
